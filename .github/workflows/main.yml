@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build and Push Docker Image
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -33,7 +33,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./Arcus.Demo.WebAPI/
+          context: .
           file: ./Dockerfile
           platforms: linux/amd64,linux/arm64,linux/386
           push: true
